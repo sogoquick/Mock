@@ -10,6 +10,13 @@ module.exports = {
         '120x60', '120x240', '125x125', '728x90', '160x600',
         '120x600', '300x600'
     ],
+    // 图片列表
+    _imageList: [
+        'ba39d3a7678d68c69ed2455b873bf2e5', '66fa9288a96d595cf05a43f177aa72b8', '5706539ce917b21cee637439ee0f2159',
+        'b0bd8611629f473bc58237af8e2ee480', 'c9da6797a56d7e5c123138f54b879a39', '9e7d84b741b631a30036ed8b0f622171',
+        'efbaf3f09f4434874d1a1bd52e6183db', 'db568374018cc65ce6d4995fae33bda5', '5abbac174ddbf0e2b70d3809797c0129',
+        '87472aca60c129eeb8faf0fd6aa61928', 'c626bbf4821ee89381f10e667d45c567', '3bbff0d1e4ef684e304dca855cdb690e', '449b787665f7554e234cce2eb8778f23'
+    ],
     // 常见的屏幕宽高
     _screenSize: [
         '320x200', '320x240', '640x480', '800x480', '800x480',
@@ -45,6 +52,8 @@ module.exports = {
         if (foreground && ~foreground.indexOf('#')) foreground = foreground.slice(1)
 
         // http://dummyimage.com/600x400/cc00cc/470047.png&text=hello
+        return 'https://pic.lanehub.cn/production/'+ this.pick(this._imageList) +
+            '.jpg?x-oss-process=style/m-00001'
         return 'http://dummyimage.com/' + size +
             (background ? '/' + background : '') +
             (foreground ? '/' + foreground : '') +
